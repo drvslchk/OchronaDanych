@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Notes shared to you</h1>
+
+<div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Note</th>
+      <th>Author</th>
+    </tr>
+    {% for note in connectedNotes %}
+    <tr>
+      <td style="width: 15%">{{note.title}}</td>
+      <td style="width: 70%">{{note.text}}</td>
+      <td style="width: 15%">{{note.userID}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  {% endblock %}
+</div>

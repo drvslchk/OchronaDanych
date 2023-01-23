@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<h1 class="title">Welcome, {{ name }}!</h1>
+<ul class="menu">
+  <li>
+    <a href="{{ url_for('main.notes') }}"> Your notes </a>
+  </li>
+  <li>
+    <a href="{{ url_for('main.sharedNotes') }}"> Notes shared to you </a>
+  </li>
+  <li>
+    <a href="{{ url_for('main.publicNotes') }}"> Public notes </a>
+  </li>
+  <li><a href="{{ url_for('main.addNote') }}"> + Add note </a></li>
+</ul>
+{% endblock %}

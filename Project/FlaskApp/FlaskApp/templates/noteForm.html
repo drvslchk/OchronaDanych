@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block content %}
+
+<h1 class="title">Add new note.</h1>
+<form method="POST" action="/notes/new">
+  <div class="field">
+    <div class="control">
+      <input
+        class="input is-large"
+        type="text"
+        name="title"
+        placeholder="Your Note Title"
+        autofocus=""
+      />
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input
+        class="input is-large"
+        type="text"
+        name="note"
+        placeholder="Your Note"
+        autofocus=""
+      />
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input type="file" accept="image/*" name="img" />
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      Share with allowed users
+      <input
+        type="checkbox"
+        name="isEncrypted"
+        onclick="if(this.checked){this.nextSibling.style.display=''}else {this.nextSibling.style.display='none';  this.nextSibling.value='';}"
+      /><input
+        class="input is-large"
+        type="text"
+        name="users"
+        placeholder="Users allowed to see note"
+        autofocus=""
+        style="display: none"
+      />
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      Public (Visible by all users)<input type="checkbox" name="isPublic" />
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      Encrypt the note
+      <input
+        type="checkbox"
+        name="isEncrypted"
+        onclick="if(this.checked){this.nextSibling.style.display=''}else {this.nextSibling.style.display='none';  this.nextSibling.value='';}"
+      /><input
+        class="input is-large"
+        type="text"
+        name="key"
+        placeholder="Write the encription key"
+        style="display: none"
+      />
+    </div>
+  </div>
+  <button class="button is-block is-info is-large is-fullwidth">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Public notes</h1>
+<div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Note</th>
+      <th>Author</th>
+    </tr>
+    {% for note in publicNotes %}
+    <tr>
+      <td style="width: 15%">{{note.title}}</td>
+      <td style="width: 70%">{{note.text}}</td>
+      <td style="width: 15%">{{note.userID}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
